@@ -26,7 +26,11 @@ namespace EvrySmartbike2Service.Models
 
         public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.Sensordata> Sensordata { get; set; }
 
-        public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.TestTable> Testdata { get; set; }
+        public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.Beacon> Beacons { get; set; }
+
+        public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.BicycleTour> BicycleTours { get; set; }
+
+        public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.Employee> Employees { get; set; }
 
     }
 }

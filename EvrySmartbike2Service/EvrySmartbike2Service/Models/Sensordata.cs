@@ -10,17 +10,14 @@ namespace EvrySmartbike2Service.Models
     {
         public Guid Id { get; set; }
         [Required]
-        public string SensorId { get; set; }
-        public string Payload { get; set; }
+        public Guid SensorID { get; set; }
+        public double Humidity { get; set; }
+        public double AtmospherePressure { get; set; }
         public DateTime Timestamp { get; set; }
-        
+        public double AccelerationX { get; set; }
+        public double AccelerationY { get; set; }
+        public double AccelerationZ { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
-    //public class Sensordata
-    //{
-    //    public Guid Id { get; set; }
-    //    public string Payload { get; set; }
-    //    public DateTime Timestamp { get; set; }
-
-    //}
-
 }
