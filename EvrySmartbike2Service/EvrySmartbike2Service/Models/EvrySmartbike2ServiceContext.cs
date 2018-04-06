@@ -19,10 +19,6 @@ namespace EvrySmartbike2Service.Models
         {
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            Database.SetInitializer<EvrySmartbike2ServiceContext>(null);
-        }
 
         public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.Sensordata> Sensordata { get; set; }
 
@@ -31,6 +27,10 @@ namespace EvrySmartbike2Service.Models
         public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.BicycleTour> BicycleTours { get; set; }
 
         public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.Employee> Employees { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<EvrySmartbike2ServiceContext>(null);
+        }
 
     }
 }

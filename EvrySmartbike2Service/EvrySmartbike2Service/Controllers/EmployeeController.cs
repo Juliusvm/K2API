@@ -12,7 +12,7 @@ using System.Web.Http.Description;
 using EvrySmartbike2Service.Models;
 namespace EvrySmartbike2Service.Controllers
 {
-    public class EmployeeController
+    public class EmployeeController : ApiController
     {
         private EvrySmartbike2ServiceContext db = new EvrySmartbike2ServiceContext();
 

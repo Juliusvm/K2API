@@ -7,6 +7,7 @@ namespace EvrySmartbike2Service.Models
 {
     public class Beacon
     {
+        [Key]
         public Guid SensorID { get; set; }
         [Required]
         public string Information { get; set; }

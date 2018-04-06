@@ -7,6 +7,7 @@ namespace EvrySmartbike2Service.Models
 {
     public class BicycleTour
     {
+        [Key]
         public Guid ID { get; set; }
         [Required]
         public Guid SensorID { get; set;}

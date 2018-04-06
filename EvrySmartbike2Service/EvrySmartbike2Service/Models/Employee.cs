@@ -7,6 +7,8 @@ namespace EvrySmartbike2Service.Models
 {
     public class Employee
     {
+        [Required]
+        [Key]
         public Guid EmployeeID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
