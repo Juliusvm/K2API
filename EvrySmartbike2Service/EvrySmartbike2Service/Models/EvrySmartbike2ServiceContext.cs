@@ -17,15 +17,16 @@ namespace EvrySmartbike2Service.Models
     
         public EvrySmartbike2ServiceContext() : base("name=EvrySmartbike2ServiceContext")
         {
-            
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<EvrySmartbike2ServiceContext>(null);
         }
 
         public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.Sensordata> Sensordata { get; set; }
+
         public System.Data.Entity.DbSet<EvrySmartbike2Service.Models.TestTable> Testdata { get; set; }
-        
+
     }
 }

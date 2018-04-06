@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -22,7 +21,7 @@ namespace EvrySmartbike2Service.Controllers
         public IQueryable<TestTable> GetSensordata()
         {
             return db.Testdata;
-        
+
 
         }
     }

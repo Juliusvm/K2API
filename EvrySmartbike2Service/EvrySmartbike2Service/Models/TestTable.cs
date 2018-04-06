@@ -7,7 +7,7 @@ namespace EvrySmartbike2Service.Models
 {
     public class TestTable
     {
-        
+
         public int ID { get; set; }
         [Required]
         public int Value { get; set; }

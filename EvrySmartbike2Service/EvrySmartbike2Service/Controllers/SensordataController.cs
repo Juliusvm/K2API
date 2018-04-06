@@ -21,10 +21,7 @@ namespace EvrySmartbike2Service.Controllers
         public IQueryable<Sensordata> GetSensordata()
         {
             return db.Sensordata;
-
         }
-
-
 
         // GET: api/Sensordata/5
         [ResponseType(typeof(Sensordata))]
