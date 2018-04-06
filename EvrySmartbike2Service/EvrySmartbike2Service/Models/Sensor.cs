@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 namespace EvrySmartbike2Service.Models
 {
-    public class Beacon
+    public class Sensor
     {
         [Key]
         public Guid SensorID { get; set; }
