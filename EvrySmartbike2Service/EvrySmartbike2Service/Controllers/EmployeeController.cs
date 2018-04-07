@@ -21,5 +21,41 @@ namespace EvrySmartbike2Service.Controllers
         {
             return db.Employees;
         }
+
+        // POST: api/Employee
+        [ResponseType(typeof(Employee))]
+        public async Task<IHttpActionResult> PostSensordata(Employee employee)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.Employees.Add(employee);
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (EmployeeExists(employee.EmployeeID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = employee.EmployeeID }, employee);
+        }
+
+        private bool EmployeeExists(Guid id)
+        {
+            return db.Employees.Count(e => e.EmployeeID == id) > 0;
+        }
+
     }
 }

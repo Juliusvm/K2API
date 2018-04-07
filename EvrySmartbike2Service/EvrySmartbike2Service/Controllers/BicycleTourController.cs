@@ -21,5 +21,40 @@ namespace EvrySmartbike2Service.Controllers
         {
             return db.BicycleTours;
         }
+
+        // POST: api/BicycleTour
+        [ResponseType(typeof(BicycleTour))]
+        public async Task<IHttpActionResult> PostSensordata(BicycleTour bicycleTour)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.BicycleTours.Add(bicycleTour);
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (BicycleTourExists(bicycleTour.ID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = bicycleTour.ID }, bicycleTour);
+        }
+
+        private bool BicycleTourExists(Guid id)
+        {
+            return db.BicycleTours.Count(e => e.ID == id) > 0;
+        }
     }
 }
