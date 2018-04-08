@@ -22,7 +22,7 @@ namespace EvrySmartbike2Service.Controllers
             return db.Employees;
         }
 
-        // GET: api/Employee/5
+        // GET: api/Employee/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(Employee))]
         public async Task<IHttpActionResult> GetEmployee(Guid id)
         {
@@ -65,7 +65,7 @@ namespace EvrySmartbike2Service.Controllers
         }
 
 
-        // DELETE: api/Employee/5kjs-82da-kij3-kas3
+        // DELETE: api/Employee/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(Employee))]
         public async Task<IHttpActionResult> DeleteEmployee(Guid id)
         {

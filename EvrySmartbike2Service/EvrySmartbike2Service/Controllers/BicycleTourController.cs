@@ -22,7 +22,7 @@ namespace EvrySmartbike2Service.Controllers
             return db.BicycleTours;
         }
 
-        // GET: api/BicycleTour/5
+        // GET: api/BicycleTour/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(BicycleTour))]
         public async Task<IHttpActionResult> GetBicycleTour(Guid id)
         {
@@ -66,7 +66,7 @@ namespace EvrySmartbike2Service.Controllers
         }
 
 
-        // DELETE: api/BicycleTour/5kjs-82da-kij3-kas3
+        // DELETE: api/BicycleTour/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(BicycleTour))]
         public async Task<IHttpActionResult> DeleteBicycleTour(Guid id)
         {

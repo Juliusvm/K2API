@@ -23,7 +23,7 @@ namespace EvrySmartbike2Service.Controllers
             return db.Sensors;
         }
 
-        // GET: api/Sensor/5
+        // GET: api/Sensor/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(Sensor))]
         public async Task<IHttpActionResult> GetSensor(Guid id)
         {
@@ -67,7 +67,7 @@ namespace EvrySmartbike2Service.Controllers
         }
 
 
-        // DELETE: api/Sensor/5kjs-82da-kij3-kas3
+        // DELETE: api/Sensor/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(Sensor))]
         public async Task<IHttpActionResult> DeleteSensor(Guid id)
         {
