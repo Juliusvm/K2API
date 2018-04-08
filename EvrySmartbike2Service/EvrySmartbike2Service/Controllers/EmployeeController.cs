@@ -17,14 +17,26 @@ namespace EvrySmartbike2Service.Controllers
         private EvrySmartbike2ServiceContext db = new EvrySmartbike2ServiceContext();
 
         // GET: api/Employee
-        public IQueryable<Employee> GetSensordata()
+        public IQueryable<Employee> GetEmployees()
         {
             return db.Employees;
         }
 
+        // GET: api/Employee/5
+        [ResponseType(typeof(Employee))]
+        public async Task<IHttpActionResult> GetEmployee(Guid id)
+        {
+            Employee employees = await db.Employees.FindAsync(id);
+            if (employees == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(employees);
+        }
         // POST: api/Employee
         [ResponseType(typeof(Employee))]
-        public async Task<IHttpActionResult> PostSensordata(Employee employee)
+        public async Task<IHttpActionResult> PostEmployee(Employee employee)
         {
             if (!ModelState.IsValid)
             {
@@ -50,6 +62,23 @@ namespace EvrySmartbike2Service.Controllers
             }
 
             return CreatedAtRoute("DefaultApi", new { id = employee.EmployeeID }, employee);
+        }
+
+
+        // DELETE: api/Employee/5kjs-82da-kij3-kas3
+        [ResponseType(typeof(Employee))]
+        public async Task<IHttpActionResult> DeleteEmployee(Guid id)
+        {
+            BicycleTour bicycleTour = await db.BicycleTours.FindAsync(id);
+            if (bicycleTour == null)
+            {
+                return NotFound();
+            }
+
+            db.BicycleTours.Remove(bicycleTour);
+            await db.SaveChangesAsync();
+
+            return Ok(bicycleTour);
         }
 
         private bool EmployeeExists(Guid id)

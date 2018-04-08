@@ -17,15 +17,28 @@ namespace EvrySmartbike2Service.Controllers
     {
         private EvrySmartbike2ServiceContext db = new EvrySmartbike2ServiceContext();
 
-        // GET: api/Beacon
-        public IQueryable<Sensor> GetSensordata()
+        // GET: api/Sensor
+        public IQueryable<Sensor> GetSensors()
         {
             return db.Sensors;
         }
 
-        // POST: api/Sensordata
+        // GET: api/Sensor/5
         [ResponseType(typeof(Sensor))]
-        public async Task<IHttpActionResult> PostSensordata(Sensor sensor)
+        public async Task<IHttpActionResult> GetSensor(Guid id)
+        {
+            Sensor sensor = await db.Sensors.FindAsync(id);
+            if (sensor == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(sensor);
+        }
+
+        // POST: api/Sensor
+        [ResponseType(typeof(Sensor))]
+        public async Task<IHttpActionResult> PostSensor(Sensor sensor)
         {
             if (!ModelState.IsValid)
             {
@@ -51,6 +64,24 @@ namespace EvrySmartbike2Service.Controllers
             }
 
             return CreatedAtRoute("DefaultApi", new { id = sensor.SensorID }, sensor);
+        }
+
+
+        // DELETE: api/Sensor/5kjs-82da-kij3-kas3
+        [ResponseType(typeof(Sensor))]
+        public async Task<IHttpActionResult> DeleteSensor(Guid id)
+        {
+            Sensor sensor = await db.Sensors.FindAsync(id);
+            if (sensor == null)
+            {
+                return NotFound();
+            }
+
+            db.Sensors.Remove(sensor);
+
+            await db.SaveChangesAsync();
+
+            return Ok(sensor);
         }
 
         private bool SensorExists(Guid id)

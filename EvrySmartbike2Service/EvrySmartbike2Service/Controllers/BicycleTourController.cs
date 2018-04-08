@@ -17,14 +17,27 @@ namespace EvrySmartbike2Service.Controllers
         private EvrySmartbike2ServiceContext db = new EvrySmartbike2ServiceContext();
 
         // GET: api/BicycleTour
-        public IQueryable<BicycleTour> GetSensordata()
+        public IQueryable<BicycleTour> GetBicycleTour()
         {
             return db.BicycleTours;
         }
 
+        // GET: api/BicycleTour/5
+        [ResponseType(typeof(BicycleTour))]
+        public async Task<IHttpActionResult> GetBicycleTour(Guid id)
+        {
+            BicycleTour bicycleTour = await db.BicycleTours.FindAsync(id);
+            if (bicycleTour == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(bicycleTour);
+        }
+
         // POST: api/BicycleTour
         [ResponseType(typeof(BicycleTour))]
-        public async Task<IHttpActionResult> PostSensordata(BicycleTour bicycleTour)
+        public async Task<IHttpActionResult> PostBicycleTour(BicycleTour bicycleTour)
         {
             if (!ModelState.IsValid)
             {
@@ -51,6 +64,24 @@ namespace EvrySmartbike2Service.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = bicycleTour.ID }, bicycleTour);
         }
+
+
+        // DELETE: api/BicycleTour/5kjs-82da-kij3-kas3
+        [ResponseType(typeof(BicycleTour))]
+        public async Task<IHttpActionResult> DeleteBicycleTour(Guid id)
+        {
+            BicycleTour bicycleTour = await db.BicycleTours.FindAsync(id);
+            if (bicycleTour == null)
+            {
+                return NotFound();
+            }
+
+            db.BicycleTours.Remove(bicycleTour);
+            await db.SaveChangesAsync();
+
+            return Ok(bicycleTour);
+        }
+
 
         private bool BicycleTourExists(Guid id)
         {
