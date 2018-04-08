@@ -69,16 +69,16 @@ namespace EvrySmartbike2Service.Controllers
         [ResponseType(typeof(Employee))]
         public async Task<IHttpActionResult> DeleteEmployee(Guid id)
         {
-            BicycleTour bicycleTour = await db.BicycleTours.FindAsync(id);
-            if (bicycleTour == null)
+            Employee employee = await db.Employees.FindAsync(id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            db.BicycleTours.Remove(bicycleTour);
+            db.Employees.Remove(employee);
             await db.SaveChangesAsync();
 
-            return Ok(bicycleTour);
+            return Ok(employee);
         }
 
         private bool EmployeeExists(Guid id)

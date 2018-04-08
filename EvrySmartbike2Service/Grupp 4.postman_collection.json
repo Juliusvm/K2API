@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "cc0c69ed-f1be-46d0-b8bd-cbe5d3bf73a8",
+		"name": "Grupp 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Group 4 Login",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "672f80ce-d0e3-44f0-b4d5-d5d5f5e2667d",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "MaHbxFPtIDeEbe+7TZaX3dCYsZEArvYRr7AJVue5eTI=",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "1fcc6473-c04d-4395-9037-e65a00a522bd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.windows.net/833a3752-2719-4945-b470-b20fc1da9ca6/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"windows",
+						"net"
+					],
+					"path": [
+						"833a3752-2719-4945-b470-b20fc1da9ca6",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group 4 Sensordata",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyIsImtpZCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyJ9.eyJhdWQiOiIxZmNjNjQ3My1jMDRkLTQzOTUtOTAzNy1lNjVhMDBhNTIyYmQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYvIiwiaWF0IjoxNTIzMTgzOTMzLCJuYmYiOjE1MjMxODM5MzMsImV4cCI6MTUyMzE4NzgzMywiYWlvIjoiWTJOZ1lIalprWlh5cmMxdTA3RjlDWjlOajByeEFBQT0iLCJhcHBpZCI6IjY3MmY4MGNlLWQwZTMtNDRmMC1iNGQ1LWQ1ZDVmNWUyNjY3ZCIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzgzM2EzNzUyLTI3MTktNDk0NS1iNDcwLWIyMGZjMWRhOWNhNi8iLCJvaWQiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJzdWIiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJ0aWQiOiI4MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYiLCJ1dGkiOiJ2LTJVczlpZWtFS2RybFRZRzBnSUFBIiwidmVyIjoiMS4wIn0.GxPD9Q95Lm89h-A-bFRxHWqzJmAeSCor_e-PW1fC65xdK6sxb__XTzKxaUYPSBo7gpXYVhrm1faFEdBgUcuuDN4FllCTVTer47os16J4CJUdi8WXn0YY3BfbfdAnsMF8vxJpn7xTn5j0iUW4w7_NaRWm61m1DODY5lGdu_JLfEvVZxIz2b9jp84mY4OGfiX9FlCD5yqqgDDbJs2vIFNYDnXa2NOLdlSG-oZHHa9Exu0mW6u0NCpm53tANmA8xRtFeNIthbbEVE6Cz2Mu-dhP8Y115VG7TUzIHQbeCJ6qoXOSdduxQ5VJe52uI9OkVbfqhdaMcxFzksouUVw5KHEZ8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Id\": \"5eb1065b-7042-428b-a100-d62fffea111d\",\n        \"SensorID\": \"a64b7522-3903-45be-bce0-63aa132a0bc9\",\n        \"BicycleTourID\": \"16f7fea0-44ba-439c-aff2-f1162c49fd61\",\n        \"Humidity\": 0.36,\n        \"AtmospherePressure\": 1017,\n        \"Timestamp\": \"2018-04-02T12:10:00\",\n        \"AccelerationX\": 10,\n        \"AccelerationY\": 10,\n        \"AccelerationZ\": 10,\n        \"Latitude\": 57.78,\n        \"Longitude\": 14.16\n    }"
+				},
+				"url": {
+					"raw": "https://evrysmartbike2servicegroup4.azurewebsites.net/api/Sensordata",
+					"protocol": "https",
+					"host": [
+						"evrysmartbike2servicegroup4",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Sensordata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group 4 Sensor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyIsImtpZCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyJ9.eyJhdWQiOiIxZmNjNjQ3My1jMDRkLTQzOTUtOTAzNy1lNjVhMDBhNTIyYmQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYvIiwiaWF0IjoxNTIzMTgzOTMzLCJuYmYiOjE1MjMxODM5MzMsImV4cCI6MTUyMzE4NzgzMywiYWlvIjoiWTJOZ1lIalprWlh5cmMxdTA3RjlDWjlOajByeEFBQT0iLCJhcHBpZCI6IjY3MmY4MGNlLWQwZTMtNDRmMC1iNGQ1LWQ1ZDVmNWUyNjY3ZCIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzgzM2EzNzUyLTI3MTktNDk0NS1iNDcwLWIyMGZjMWRhOWNhNi8iLCJvaWQiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJzdWIiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJ0aWQiOiI4MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYiLCJ1dGkiOiJ2LTJVczlpZWtFS2RybFRZRzBnSUFBIiwidmVyIjoiMS4wIn0.GxPD9Q95Lm89h-A-bFRxHWqzJmAeSCor_e-PW1fC65xdK6sxb__XTzKxaUYPSBo7gpXYVhrm1faFEdBgUcuuDN4FllCTVTer47os16J4CJUdi8WXn0YY3BfbfdAnsMF8vxJpn7xTn5j0iUW4w7_NaRWm61m1DODY5lGdu_JLfEvVZxIz2b9jp84mY4OGfiX9FlCD5yqqgDDbJs2vIFNYDnXa2NOLdlSG-oZHHa9Exu0mW6u0NCpm53tANmA8xRtFeNIthbbEVE6Cz2Mu-dhP8Y115VG7TUzIHQbeCJ6qoXOSdduxQ5VJe52uI9OkVbfqhdaMcxFzksouUVw5KHEZ8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"SensorID\": \"5eb1065b-7042-428b-a100-d62fffea111d\",\n        \"Information\": \"Lite eeeee\",\n        \"BicycleNumber\": 1\n    }"
+				},
+				"url": {
+					"raw": "https://evrysmartbike2servicegroup4.azurewebsites.net/api/Sensor",
+					"protocol": "https",
+					"host": [
+						"evrysmartbike2servicegroup4",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Sensor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group 4 BicycleTour",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyIsImtpZCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyJ9.eyJhdWQiOiIxZmNjNjQ3My1jMDRkLTQzOTUtOTAzNy1lNjVhMDBhNTIyYmQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYvIiwiaWF0IjoxNTIzMTgzOTMzLCJuYmYiOjE1MjMxODM5MzMsImV4cCI6MTUyMzE4NzgzMywiYWlvIjoiWTJOZ1lIalprWlh5cmMxdTA3RjlDWjlOajByeEFBQT0iLCJhcHBpZCI6IjY3MmY4MGNlLWQwZTMtNDRmMC1iNGQ1LWQ1ZDVmNWUyNjY3ZCIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzgzM2EzNzUyLTI3MTktNDk0NS1iNDcwLWIyMGZjMWRhOWNhNi8iLCJvaWQiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJzdWIiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJ0aWQiOiI4MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYiLCJ1dGkiOiJ2LTJVczlpZWtFS2RybFRZRzBnSUFBIiwidmVyIjoiMS4wIn0.GxPD9Q95Lm89h-A-bFRxHWqzJmAeSCor_e-PW1fC65xdK6sxb__XTzKxaUYPSBo7gpXYVhrm1faFEdBgUcuuDN4FllCTVTer47os16J4CJUdi8WXn0YY3BfbfdAnsMF8vxJpn7xTn5j0iUW4w7_NaRWm61m1DODY5lGdu_JLfEvVZxIz2b9jp84mY4OGfiX9FlCD5yqqgDDbJs2vIFNYDnXa2NOLdlSG-oZHHa9Exu0mW6u0NCpm53tANmA8xRtFeNIthbbEVE6Cz2Mu-dhP8Y115VG7TUzIHQbeCJ6qoXOSdduxQ5VJe52uI9OkVbfqhdaMcxFzksouUVw5KHEZ8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"Id\": \"813a74b5-4f71-4e69-88b7-7df67ea21357\",\n        \"SensorID\": \"513a74b5-4f71-4e69-88b7-7df67ea21356\",\n        \"BicycleTourID\": \"16f7fea0-44ba-439c-aff2-f1162c49fd61\",\n        \"Humidity\": 7,\n        \"AtmospherePressure\": 3,\n        \"Timestamp\": \"2011-12-30T00:00:00\",\n        \"AccelerationX\": 5,\n        \"AccelerationY\": 5,\n        \"AccelerationZ\": 5,\n        \"Latitude\": 5,\n        \"Longitude\": 5\n }"
+				},
+				"url": {
+					"raw": "https://evrysmartbike2servicegroup4.azurewebsites.net/api/BicycleTour",
+					"protocol": "https",
+					"host": [
+						"evrysmartbike2servicegroup4",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"BicycleTour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group 4 Employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyIsImtpZCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyJ9.eyJhdWQiOiIxZmNjNjQ3My1jMDRkLTQzOTUtOTAzNy1lNjVhMDBhNTIyYmQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYvIiwiaWF0IjoxNTIzMTgzOTMzLCJuYmYiOjE1MjMxODM5MzMsImV4cCI6MTUyMzE4NzgzMywiYWlvIjoiWTJOZ1lIalprWlh5cmMxdTA3RjlDWjlOajByeEFBQT0iLCJhcHBpZCI6IjY3MmY4MGNlLWQwZTMtNDRmMC1iNGQ1LWQ1ZDVmNWUyNjY3ZCIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzgzM2EzNzUyLTI3MTktNDk0NS1iNDcwLWIyMGZjMWRhOWNhNi8iLCJvaWQiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJzdWIiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJ0aWQiOiI4MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYiLCJ1dGkiOiJ2LTJVczlpZWtFS2RybFRZRzBnSUFBIiwidmVyIjoiMS4wIn0.GxPD9Q95Lm89h-A-bFRxHWqzJmAeSCor_e-PW1fC65xdK6sxb__XTzKxaUYPSBo7gpXYVhrm1faFEdBgUcuuDN4FllCTVTer47os16J4CJUdi8WXn0YY3BfbfdAnsMF8vxJpn7xTn5j0iUW4w7_NaRWm61m1DODY5lGdu_JLfEvVZxIz2b9jp84mY4OGfiX9FlCD5yqqgDDbJs2vIFNYDnXa2NOLdlSG-oZHHa9Exu0mW6u0NCpm53tANmA8xRtFeNIthbbEVE6Cz2Mu-dhP8Y115VG7TUzIHQbeCJ6qoXOSdduxQ5VJe52uI9OkVbfqhdaMcxFzksouUVw5KHEZ8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"Id\": \"813a74b5-4f71-4e69-88b7-7df67ea21357\",\n        \"SensorID\": \"513a74b5-4f71-4e69-88b7-7df67ea21356\",\n        \"BicycleTourID\": \"16f7fea0-44ba-439c-aff2-f1162c49fd61\",\n        \"Humidity\": 7,\n        \"AtmospherePressure\": 3,\n        \"Timestamp\": \"2011-12-30T00:00:00\",\n        \"AccelerationX\": 5,\n        \"AccelerationY\": 5,\n        \"AccelerationZ\": 5,\n        \"Latitude\": 5,\n        \"Longitude\": 5\n }"
+				},
+				"url": {
+					"raw": "https://evrysmartbike2servicegroup4.azurewebsites.net/api/Employee",
+					"protocol": "https",
+					"host": [
+						"evrysmartbike2servicegroup4",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Employee"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyIsImtpZCI6IkZTaW11RnJGTm9DMHNKWEdtdjEzbk5aY2VEYyJ9.eyJhdWQiOiIxZmNjNjQ3My1jMDRkLTQzOTUtOTAzNy1lNjVhMDBhNTIyYmQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYvIiwiaWF0IjoxNTIzMTgzOTMzLCJuYmYiOjE1MjMxODM5MzMsImV4cCI6MTUyMzE4NzgzMywiYWlvIjoiWTJOZ1lIalprWlh5cmMxdTA3RjlDWjlOajByeEFBQT0iLCJhcHBpZCI6IjY3MmY4MGNlLWQwZTMtNDRmMC1iNGQ1LWQ1ZDVmNWUyNjY3ZCIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzgzM2EzNzUyLTI3MTktNDk0NS1iNDcwLWIyMGZjMWRhOWNhNi8iLCJvaWQiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJzdWIiOiI2YThmODQyNy0zYWYzLTQ4MDMtOWE4NS1mMjJmNmEwMzMzM2YiLCJ0aWQiOiI4MzNhMzc1Mi0yNzE5LTQ5NDUtYjQ3MC1iMjBmYzFkYTljYTYiLCJ1dGkiOiJ2LTJVczlpZWtFS2RybFRZRzBnSUFBIiwidmVyIjoiMS4wIn0.GxPD9Q95Lm89h-A-bFRxHWqzJmAeSCor_e-PW1fC65xdK6sxb__XTzKxaUYPSBo7gpXYVhrm1faFEdBgUcuuDN4FllCTVTer47os16J4CJUdi8WXn0YY3BfbfdAnsMF8vxJpn7xTn5j0iUW4w7_NaRWm61m1DODY5lGdu_JLfEvVZxIz2b9jp84mY4OGfiX9FlCD5yqqgDDbJs2vIFNYDnXa2NOLdlSG-oZHHa9Exu0mW6u0NCpm53tANmA8xRtFeNIthbbEVE6Cz2Mu-dhP8Y115VG7TUzIHQbeCJ6qoXOSdduxQ5VJe52uI9OkVbfqhdaMcxFzksouUVw5KHEZ8A",
+				"type": "string"
+			}
+		]
+	}
+}
