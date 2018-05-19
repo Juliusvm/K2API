@@ -37,35 +37,35 @@ namespace EvrySmartbike2Service.Controllers
         }
 
         
-        // POST: api/Sensordata
-        [ResponseType(typeof(Sensordata))]
-        public async Task<IHttpActionResult> PostSensordata(Sensordata sensordata)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST: api/Sensordata
+        //[ResponseType(typeof(Sensordata))]
+        //public async Task<IHttpActionResult> PostSensordata(Sensordata sensordata)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            db.Sensordata.Add(sensordata);
+        //    db.Sensordata.Add(sensordata);
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (SensordataExists(sensordata.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await db.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateException)
+        //    {
+        //        if (SensordataExists(sensordata.Id))
+        //        {
+        //            return Conflict();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return CreatedAtRoute("DefaultApi", new { id = sensordata.Id }, sensordata);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = sensordata.Id }, sensordata);
+        //}
 
         // POST: api/Sensordata
         [ResponseType(typeof(List<Sensordata>))]
