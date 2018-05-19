@@ -10,7 +10,7 @@ namespace EvrySmartbike2Service.Models
         [Key]
         public Guid ID { get; set; }
         [Required]
-        public Guid SensorID { get; set;}
+        public String SensorID { get; set;}
         [Required]
         public Guid EmployeeID { get; set; }
         [Required]

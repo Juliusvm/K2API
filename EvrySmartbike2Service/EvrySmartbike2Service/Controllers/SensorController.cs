@@ -84,7 +84,7 @@ namespace EvrySmartbike2Service.Controllers
             return Ok(sensor);
         }
 
-        private bool SensorExists(Guid id)
+        private bool SensorExists(String id)
         {
             return db.Sensors.Count(e => e.SensorID == id) > 0;
         }

@@ -67,6 +67,32 @@ namespace EvrySmartbike2Service.Controllers
             return CreatedAtRoute("DefaultApi", new { id = sensordata.Id }, sensordata);
         }
 
+        // POST: api/Sensordata
+        [ResponseType(typeof(List<Sensordata>))]
+        public async Task<IHttpActionResult> PostSensordata(List<Sensordata> sensordata)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            foreach (Sensordata sd in sensordata)
+            {
+                db.Sensordata.Add(sd);
+            }
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = sensordata[0].Id }, sensordata);
+        }
+
         // DELETE: api/Sensordata/6870218c-e089-4236-93d7-f7938b5871af
         [ResponseType(typeof(Sensordata))]
         public async Task<IHttpActionResult> DeleteSensordata(Guid id)

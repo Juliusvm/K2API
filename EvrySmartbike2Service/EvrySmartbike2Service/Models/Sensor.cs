@@ -8,7 +8,7 @@ namespace EvrySmartbike2Service.Models
     public class Sensor
     {
         [Key]
-        public Guid SensorID { get; set; }
+        public String SensorID { get; set; }
         [Required]
         public string Information { get; set; }
         public int BicycleNumber { get; set; }
